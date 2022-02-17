@@ -40,23 +40,17 @@ function errorForIncomeExpense() {
     //if input field has any nan value
     if (isNaN(income) || isNaN(food) || isNaN(rent) || isNaN(cloth)) {
         failErrorForNan.style.display = 'block';
-        successMessage.style.display = 'none';
-        failErrorForNegative.style.display = 'none';
-        failErrorForSmallerIncome.style.display = 'none';
+
     }
 
     //if input field has any negative value
     else if (parseFloat(income) < 0 || parseFloat(food) < 0 || parseFloat(rent) < 0 || parseFloat(cloth) < 0) {
-        failErrorForNan.style.display = 'none';
-        successMessage.style.display = 'none';
-        failErrorForSmallerIncome.style.display = 'none';
+
         failErrorForNegative.style.display = 'block';
 
     }
     else if (sumOfExpenses > income) {
-        failErrorForNan.style.display = 'none';
-        successMessage.style.display = 'none';
-        failErrorForNegative.style.display = 'none';
+
         failErrorForSmallerIncome.style.display = 'block';
 
     }
@@ -95,7 +89,7 @@ function savingAmountCalculation() {
     document.getElementById('save-btn').addEventListener('click', function () {
         const totalBalance = getTotalBalance().innerText;
         const saveAmount = (document.getElementById('save-input').value);
-        const saveAmountCalculation = parseFloat((saveAmount / 100) * (getInputValue('income-balance')));
+        const saveAmountCalculation = parseInt((saveAmount / 100) * (getInputValue('income-balance')));
         //all error message store
         const savedSuccess = document.getElementById('save-success');
         const errorNan = document.getElementById('error-for-NAN');
@@ -112,7 +106,7 @@ function savingAmountCalculation() {
 
         else {
             document.getElementById('saving-amount').innerText = saveAmountCalculation;
-            document.getElementById('remaining-balance').innerText = parseFloat(getTotalBalance().innerText - saveAmountCalculation);
+            document.getElementById('remaining-balance').innerText = parseInt(getTotalBalance().innerText - saveAmountCalculation);
             savedSuccess.style.display = 'block';
 
         }
