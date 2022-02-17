@@ -1,0 +1,21 @@
+/* header color */
+.header-color{
+    color: #045F5F;
+}
+/* heading color */
+.heading-color{
+    color: rgba(17, 68, 134, 0.945);
+}
+/* error message style */
+.calculation{
+    color: rgb(209, 0, 0);
+    text-align: center;
+    font-weight: 700;
+    border:solid 1px rgb(209, 0, 0);
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 3px 20px;
+    display: none;
+  
+}
