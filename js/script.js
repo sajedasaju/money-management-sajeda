@@ -88,7 +88,8 @@ function savingAmountCalculation() {
     //saving ammount calculation
     document.getElementById('save-btn').addEventListener('click', function () {
         const totalBalance = getTotalBalance().innerText;
-        const saveAmount = (document.getElementById('save-input').value);
+        const saveAmount = getInputValue('save-input');
+        // (document.getElementById('save-input').value);
         const saveAmountCalculation = parseInt((saveAmount / 100) * (getInputValue('income-balance')));
         //all error message store
         const savedSuccess = document.getElementById('save-success');
